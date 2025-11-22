@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мой эмоциональный дневник</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Эмоциональный дневник</h1>
+        
+        <div class="tabs">
+            <button class="tab-button active" onclick="showTab('main')">Новая запись</button>
+            <button class="tab-button" onclick="showTab('all')">Все записи</button>
+            <button class="tab-button" onclick="showTab('favorites')">Избранное</button>
+        </div>
+
+        <div id="main" class="tab-content">
+            <div class="form">
+                <h2>Как ты себя чувствуешь?</h2>
+                
+                <label>Выбери эмоцию:</label>
+                <select id="emotion">
+                    <option value="Счастлив">Счастлив</option>
+                    <option value="Грустно">Грустно</option>
+                    <option value="Злость">Злость</option>
+                    <option value="Спокойствие">Спокойствие</option>
+                    <option value="Тревога">Тревога</option>
+                    <option value="Усталость">Усталость</option>
+                </select>
+
+                <label>Напиши о своих чувствах:</label>
+                <textarea id="note" rows="8" placeholder="Что у тебя на душе?"></textarea>
+
+                <button onclick="addNote()">Сохранить запись</button>
+            </div>
+        </div>
+
+        <div id="all" class="tab-content" style="display: none;">
+            <h2>Все записи</h2>
+            <div id="allNotes"></div>
+        </div>
+
+        <div id="favorites" class="tab-content" style="display: none;">
+            <h2>Избранные записи</h2>
+            <div id="favoriteNotes"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
